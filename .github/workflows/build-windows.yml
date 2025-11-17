@@ -32,18 +32,18 @@ jobs:
         run: |
           jpackage `
             --input target `
-            --name MiAppJavaFX `
-            --main-jar tu-aplicacion-1.0.jar `
-            --main-class com.tuempresa.MainApp `
+            --name SistemaTEC `
+            --main-jar App-1.0-SNAPSHOT.jar `
+            --main-class com.tec.app.Login `
             --type exe `
             --app-version 1.0.0 `
-            --vendor "Tu Nombre" `
-            --description "Descripción de tu aplicación JavaFX" `
+            --vendor "TEC" `
+            --description "Sistema TEC - Aplicación JavaFX" `
             --win-dir-chooser `
             --win-menu `
             --win-shortcut `
-            --win-menu-group "MiAppJavaFX" `
-            --icon src/main/resources/icon.ico
+            --win-menu-group "SistemaTEC" `
+            --icon src/main/resources/icons/icon.ico
         shell: pwsh
 
       - name: Upload installer
@@ -52,4 +52,3 @@ jobs:
           name: windows-installer
           path: '*.exe'
           retention-days: 30
-
