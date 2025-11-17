@@ -52,3 +52,4 @@ jobs:
           name: windows-installer
           path: '*.exe'
           retention-days: 30
+
