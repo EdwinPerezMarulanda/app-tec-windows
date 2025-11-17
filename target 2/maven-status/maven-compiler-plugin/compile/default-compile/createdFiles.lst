@@ -1,0 +1,10 @@
+com/tec/app/model/ConexionDB.class
+com/tec/app/model/estudiantesDatos.class
+com/tec/app/model/getData.class
+com/tec/app/model/docentesDatos.class
+com/tec/app/controller/DocenteController.class
+com/tec/app/model/Hashed.class
+com/tec/app/controller/LoginController.class
+com/tec/app/Login.class
+com/tec/app/model/ConexionLogin.class
+module-info.class

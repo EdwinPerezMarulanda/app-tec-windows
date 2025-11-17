@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../login.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tec.app.controller.LoginController">
+    <AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="lef-form">
+        <children>
+            <Label layoutX="45.0" layoutY="266.0" text="IED CARLOS ALBÁN HOLGUÍN">
+                <font>
+                    <Font name="Telugu MN Bold" size="14.0" />
+                </font>
+            </Label>
+            <Line endX="100.0" layoutX="150.0" layoutY="311.0" startX="-100.0" />
+            <Label layoutX="66.0" layoutY="337.0" text="JORNADA EXTENDIDA">
+                <font>
+                    <Font name="Telugu MN" size="16.0" />
+                </font>
+            </Label>
+         <ImageView fitHeight="200.0" fitWidth="147.0" layoutX="77.0" layoutY="32.0">
+            <image>
+               <Image url="@../../../img/logo_tec.png" />
+            </image>
+         </ImageView>
+        </children>
+    </AnchorPane>
+    <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="300.0">
+        <children>
+            <Label layoutX="92.0" layoutY="57.0" text="BIENVENIDO">
+                <font>
+                    <Font name="Telugu MN Bold" size="18.0" />
+                </font>
+            </Label>
+            <TextField fx:id="txt_user" layoutX="26.0" layoutY="162.0" prefHeight="30.0" prefWidth="250.0" promptText="Email" styleClass="text-field" stylesheets="@../../../login.css">
+                <font>
+                    <Font name="Telugu MN" size="14.0" />
+                </font>
+            </TextField>
+            <PasswordField fx:id="txt_password" layoutX="25.0" layoutY="213.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="text-field" stylesheets="@../../../login.css">
+                <font>
+                    <Font name="Telugu MN" size="14.0" />
+                </font>
+            </PasswordField>
+            <Button fx:id="btn_entrar" layoutX="26.0" layoutY="292.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="30.0" prefWidth="250.0" stylesheets="@../../../login.css" text="ENTRAR">
+                <font>
+                    <Font name="Telugu MN" size="14.0" />
+                </font>
+            </Button>
+        </children>
+    </AnchorPane>
+</AnchorPane>

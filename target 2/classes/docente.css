@@ -1,0 +1,105 @@
+.top-form {
+    -fx-background-color: rgba(255, 208, 0, 0.5);
+}
+
+.lef-form {
+    -fx-background-color: #F5C927CC;
+}
+
+.nav-bar {
+    -fx-background-color: transparent;
+    -fx-alignment: center-left;
+}
+
+.btn-salir {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-border-radius: 3px;
+    -fx-cursor: hand;
+}
+
+.btn-salir:pressed {
+    -fx-background-color: rgba(245, 201, 39, 0);
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+
+.white-bg {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+}
+
+.card {
+    -fx-border-color: linear-gradient(to right, rgb(115, 115, 115), rgb(245, 201, 39));
+    -fx-border-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-background-color: #ececec;
+    -fx-background-radius: 8px;
+}
+
+.search {
+    -fx-padding: 0px 0px 0px 28px;
+}
+
+.import-btn {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+    -fx-cursor: hand;
+}
+
+.import-btn:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.10);
+}
+
+.import-btn:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+}
+
+.agregar-btn {
+    -fx-background-color: rgb(112, 174, 112);
+}
+
+.agregar-btn:hover {
+    -fx-background-color: rgba(112, 174, 112, 0.75);
+}
+
+.agregar-btn:pressed {
+    -fx-background-color: rgb(112, 174, 112);
+}
+
+.eliminar-btn {
+    -fx-background-color: rgb(248, 80, 80);
+}
+
+.eliminar-btn:hover {
+    -fx-background-color: rgba(248, 80, 80, 0.75);
+}
+
+.eliminar-btn:pressed {
+    -fx-background-color: rgb(248, 80, 80);
+}
+
+.actualizar-btn {
+    -fx-background-color: rgb(255, 201, 0);
+}
+
+.actualizar-btn:hover {
+    -fx-background-color: rgba(255, 201, 0, 0.75);
+}
+
+.actualizar-btn:pressed {
+    -fx-background-color: rgb(255, 201, 0);
+}
+
+.limpiar-btn {
+    -fx-background-color: rgb(85, 113, 191);
+}
+
+.limpiar-btn:hover {
+    -fx-background-color: rgba(85, 113, 191, 0.75);
+}
+
+.limpiar-btn:pressed {
+    -fx-background-color: rgb(85, 113, 191);
+}
+

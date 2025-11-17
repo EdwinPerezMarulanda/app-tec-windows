@@ -1,0 +1,54 @@
+name: Build Windows Installer
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Permite ejecutar manualmente desde GitHub
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: List target directory
+        run: dir target
+
+      - name: Create Windows Installer with jpackage
+        run: |
+          jpackage `
+            --input target `
+            --name MiAppJavaFX `
+            --main-jar tu-aplicacion-1.0.jar `
+            --main-class com.tuempresa.MainApp `
+            --type exe `
+            --app-version 1.0.0 `
+            --vendor "Tu Nombre" `
+            --description "Descripción de tu aplicación JavaFX" `
+            --win-dir-chooser `
+            --win-menu `
+            --win-shortcut `
+            --win-menu-group "MiAppJavaFX" `
+            --icon src/main/resources/icon.ico
+        shell: pwsh
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: '*.exe'
+          retention-days: 30

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tec.app.controller.DocenteController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane layoutX="123.0" layoutY="225.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <left>
+                        <AnchorPane prefHeight="799.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutY="-35.0" prefHeight="800.0" prefWidth="240.0" styleClass="lef-form" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-35.0">
+                                    <children>
+                              <AnchorPane layoutX="60.0" layoutY="14.0" prefHeight="120.0" prefWidth="115.0">
+                                 <children>
+                                    <ImageView fx:id="img_usuario" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                                              <FontAwesomeIcon glyphName="USER" layoutX="34.0" layoutY="83.0" size="5em" />
+                                 </children>
+                              </AnchorPane>
+                                        <Label layoutX="77.0" layoutY="138.0" text="Binvenido">
+                                            <font>
+                                                <Font name="Telugu MN" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lbl_usuario" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="160.0" prefHeight="30.0" prefWidth="187.0" text="Docente" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Telugu MN" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Line endX="100.0" layoutX="105.0" layoutY="204.0" startX="-69.5" />
+                              <Button fx:id="btn_inicio" alignment="CENTER" graphicTextGap="0.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="51.0" prefWidth="240.0" stylesheets="@../../../docente.css" text="INICIO">
+                                 <font>
+                                    <Font name="Telugu MN" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="HOME" size="1.5em" textAlignment="CENTER" wrappingWidth="60.0" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="nav-bar" />
+                                    <String fx:value="btn-nav" />
+                                 </styleClass>
+                              </Button>
+                                        <Button fx:id="btn_docentes" alignment="CENTER" graphicTextGap="0.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="165.0" stylesheets="@../../../docente.css" text="DOCENTES" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <font>
+                                                <Font name="Telugu MN" size="18.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="PENCIL" size="1.5em" text="" textAlignment="CENTER" wrappingWidth="60.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font></FontAwesomeIcon>
+                                            </graphic>
+                                 <styleClass>
+                                    <String fx:value="nav-bar" />
+                                    <String fx:value="btn-nav" />
+                                 </styleClass>
+                                        </Button>
+                                        <Button fx:id="btn_estudiantes" alignment="CENTER" graphicTextGap="0.0" layoutX="16.0" layoutY="360.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="50.0" prefWidth="210.0" stylesheets="@../../../docente.css" text="ESTUDIANTES" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                            <font>
+                                                <Font name="Telugu MN" size="18.0" />
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="USERS" size="1.5em" textAlignment="CENTER" wrappingWidth="60.0" />
+                                            </graphic>
+                                 <styleClass>
+                                    <String fx:value="nav-bar" />
+                                    <String fx:value="btn-nav" />
+                                 </styleClass>
+                                        </Button>
+                                        <Button fx:id="btn_salir" layoutX="17.0" layoutY="716.0" mnemonicParsing="false" onAction="#salir" prefHeight="35.0" prefWidth="50.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+                                            <styleClass>
+                                                <String fx:value="btn-salir" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="SIGN_OUT" size="2em" />
+                                            </graphic>
+                                        </Button>
+                                        <Label layoutX="66.0" layoutY="764.0" text="Salir" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="66.0">
+                                            <font>
+                                                <Font name="Telugu MN Bold" size="16.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane fx:id="form_inicio" layoutX="-7.0" prefHeight="767.0" prefWidth="960.0" styleClass="top-form" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="20.0" prefHeight="743.0" prefWidth="938.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                            <children>
+                                                <AnchorPane layoutX="54.0" layoutY="14.0" prefHeight="120.0" prefWidth="280.0" styleClass="card" stylesheets="@../../../docente.css" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                                    <children>
+                                                        <FontAwesomeIcon fill="#0040ff" glyphName="USER_PLUS" layoutX="14.0" layoutY="54.0" size="3em" />
+                                                        <Label layoutX="36.0" layoutY="79.0" text="Total de Estudiantes Día " textAlignment="CENTER">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="label_total_estudiantes_dia" alignment="CENTER_RIGHT" layoutX="204.0" layoutY="22.0" prefHeight="30.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="30.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="310.0" layoutY="20.0" prefHeight="120.0" prefWidth="280.0" styleClass="card" stylesheets="@../../../docente.css" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="20.0">
+                                                    <children>
+                                                        <Label layoutX="74.0" layoutY="79.0" text="Total Presentes">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="label_total_estudiantes_presentes" alignment="CENTER_RIGHT" layoutX="194.0" layoutY="22.0" prefHeight="30.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="30.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <FontAwesomeIcon fill="#00c621" glyphName="CHECK" layoutX="14.0" layoutY="54.0" size="3em" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="656.0" layoutY="14.0" prefHeight="120.0" prefWidth="280.0" styleClass="card" stylesheets="@../../../docente.css" AnchorPane.leftAnchor="620.0" AnchorPane.topAnchor="20.0">
+                                                    <children>
+                                                        <Label layoutX="77.0" layoutY="79.0" text="Total Ausentes">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="18.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="label_total_estudiantes_ausentes" alignment="CENTER_RIGHT" layoutX="225.0" layoutY="22.0" prefHeight="30.0" prefWidth="60.0" text="0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+                                                            <font>
+                                                                <Font name="Telugu MN" size="30.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <FontAwesomeIcon fill="RED" glyphName="MINUS" layoutX="14.0" layoutY="54.0" size="3em" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AreaChart layoutX="27.0" layoutY="201.0" prefHeight="433.0" prefWidth="880.0" title="Asistencia General" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
+                                                    <xAxis>
+                                                        <CategoryAxis side="BOTTOM" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis side="LEFT" />
+                                                    </yAxis>
+                                                </AreaChart>
+                                                <DatePicker fx:id="date_inicio" layoutX="63.0" layoutY="655.0" prefHeight="29.0" prefWidth="143.0" promptText="Fecha" styleClass="card" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="63.0" />
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="form_docentes" prefHeight="767.0" prefWidth="960.0" styleClass="top-form" stylesheets="@../../../docente.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane layoutX="14.0" layoutY="20.0" pickOnBounds="false" prefHeight="743.0" prefWidth="915.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                            <children>
+                                                <TableView fx:id="tb_docentes" layoutX="14.0" layoutY="14.0" prefHeight="276.0" prefWidth="860.0" AnchorPane.bottomAnchor="351.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="100.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="tb_id_docentes" maxWidth="1.7976931348623157E308" text="Id" />
+                                                        <TableColumn fx:id="tb_nombre_docentes" maxWidth="1.7976931348623157E308" text="Nombre" />
+                                                        <TableColumn fx:id="tb_apellido_docentes" maxWidth="1.7976931348623157E308" text="Apellido" />
+                                                        <TableColumn fx:id="tb_cargo_docentes" maxWidth="1.7976931348623157E308" text="Cargo" />
+                                                        <TableColumn fx:id="tb_area_docentes" maxWidth="1.7976931348623157E308" text="Área" />
+                                                        <TableColumn fx:id="tb_email_docentes" maxWidth="1.7976931348623157E308" text="Email" />
+                                                        <TableColumn fx:id="tb_telefono_docentes" maxWidth="1.7976931348623157E308" text="Teléfono" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="txt_buscar_docente" layoutX="38.0" layoutY="30.0" prefHeight="30.0" prefWidth="240.0" promptText="Buscar" styleClass="search" stylesheets="@../../../docente.css" AnchorPane.topAnchor="30.0">
+                                                    <font>
+                                                        <Font name="Telugu MN" size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <FontAwesomeIcon glyphName="SEARCH" layoutX="45.0" layoutY="50.0" />
+                                                <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="410.0" minWidth="60.0" text="Id:" textAlignment="CENTER" AnchorPane.bottomAnchor="299.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="450.0" minWidth="60.0" text="Nombre:" textAlignment="CENTER" AnchorPane.bottomAnchor="259.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="490.0" minWidth="60.0" text="Apellido:" textAlignment="CENTER" AnchorPane.bottomAnchor="219.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="45.0" layoutY="610.0" minWidth="60.0" text="Cargo:" textAlignment="CENTER" AnchorPane.bottomAnchor="99.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="45.0" layoutY="650.0" minWidth="60.0" text="Área:" textAlignment="CENTER" AnchorPane.bottomAnchor="59.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="530.0" minWidth="60.0" text="Email:" textAlignment="CENTER" AnchorPane.bottomAnchor="179.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label alignment="TOP_RIGHT" layoutX="45.0" layoutY="570.0" minWidth="60.0" text="Teléfono:" textAlignment="CENTER" AnchorPane.bottomAnchor="139.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="txt_id_docente" layoutX="113.0" layoutY="405.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="294.0" AnchorPane.leftAnchor="113.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txt_nombre_docente" layoutX="113.0" layoutY="445.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="113.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txt_apellido_docente" layoutX="113.0" layoutY="485.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="214.0" AnchorPane.leftAnchor="113.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txt_email_docente" layoutX="113.0" layoutY="525.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="174.0" AnchorPane.leftAnchor="113.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <TextField fx:id="txt_telefono_docente" layoutX="113.0" layoutY="565.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="134.0" AnchorPane.leftAnchor="113.0">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <ChoiceBox fx:id="chb_cargo_docente" layoutX="113.0" layoutY="605.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="113.0" />
+                                                <ChoiceBox fx:id="chb_area_docente" layoutX="113.0" layoutY="645.0" prefHeight="28.0" prefWidth="220.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="113.0" />
+                                    <AnchorPane layoutX="443.0" layoutY="434.0" prefHeight="233.0" prefWidth="180.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="443.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="add_imagen_docente" fitHeight="206.0" fitWidth="180.0" pickOnBounds="true">
+                                             <viewport>
+                                                <Rectangle2D />
+                                             </viewport></ImageView>
+                                          <Button fx:id="btn_imagen_docente" layoutY="184.0" mnemonicParsing="false" onAction="#seleccionarImagenDocente" pickOnBounds="false" prefHeight="26.0" prefWidth="180.0" styleClass="import-btn" stylesheets="@../../../docente.css" text="IMPORTAR" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0">
+                                             <cursor>
+                                                <Cursor fx:constant="DEFAULT" />
+                                             </cursor></Button>
+                                       </children>
+                                    </AnchorPane>
+                                                <Button fx:id="btn_agregar_docente" alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="416.0" mnemonicParsing="false" onAction="#addDocente" prefHeight="40.0" prefWidth="150.0" styleClass="agregar-btn" stylesheets="@../../../docente.css" text="AGREGAR" textAlignment="CENTER" AnchorPane.bottomAnchor="271.0" AnchorPane.rightAnchor="30.0" />
+                                                <Button fx:id="btn_eliminar_docente" alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="564.0" mnemonicParsing="false" onAction="#eliminarDocente" prefHeight="40.0" prefWidth="150.0" styleClass="eliminar-btn" stylesheets="@../../../docente.css" text="ELIMINAR" textAlignment="CENTER" AnchorPane.bottomAnchor="123.0" AnchorPane.rightAnchor="30.0" />
+                                                <Button fx:id="btn_actualizar_docente" alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="490.0" mnemonicParsing="false" onAction="#actualizarDocente" prefHeight="40.0" prefWidth="150.0" styleClass="actualizar-btn" stylesheets="@../../../docente.css" text="ACTUALIZAR" textAlignment="CENTER" AnchorPane.bottomAnchor="197.0" AnchorPane.rightAnchor="30.0" />
+                                    <Button fx:id="btn_limpiar_docente" alignment="CENTER" contentDisplay="CENTER" layoutX="740.0" layoutY="638.0" mnemonicParsing="false" onAction="#limpiarCamposDocente" prefHeight="40.0" prefWidth="150.0" styleClass="limpiar-btn" stylesheets="@../../../docente.css" text="LIMPIAR" textAlignment="CENTER" AnchorPane.bottomAnchor="49.0" AnchorPane.rightAnchor="30.0" />
+                                            </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                        <AnchorPane fx:id="form_estudiantes" prefHeight="767.0" prefWidth="960.0" styleClass="top-form" stylesheets="@../../../docente.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="20.0" pickOnBounds="false" prefHeight="727.0" prefWidth="923.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="tb_estudiantes" layoutX="14.0" layoutY="14.0" prefHeight="352.0" prefWidth="860.0" AnchorPane.bottomAnchor="275.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="100.0">
+                                       <columns>
+                                          <TableColumn fx:id="tb_id_estudiante" maxWidth="1.7976931348623157E308" text="Id" />
+                                          <TableColumn fx:id="tb_apellidos_estudiante" maxWidth="1.7976931348623157E308" text="Apellidos" />
+                                          <TableColumn fx:id="tb_nombres_estudiante" maxWidth="1.7976931348623157E308" text="Nombres" />
+                                          <TableColumn fx:id="tb_curso_estudiante" maxWidth="1.7976931348623157E308" text="Curso" />
+                                          <TableColumn fx:id="tb_jornada_estudiante" maxWidth="1.7976931348623157E308" text="Jornada" />
+                                          <TableColumn fx:id="tb_sede_estudiante" maxWidth="1.7976931348623157E308" text="Sede" />
+                                          <TableColumn fx:id="tb_fecha_nacimiento_estudiante" maxWidth="1.7976931348623157E308" text="Fecha Nacimiento" />
+                                          <TableColumn fx:id="tb_edad_estudiante" maxWidth="1.7976931348623157E308" text="Edad" />
+                                          <TableColumn fx:id="tb_direccion_estudiante" maxWidth="1.7976931348623157E308" text="Dirección" />
+                                          <TableColumn fx:id="tb_barrio_estudiante" maxWidth="1.7976931348623157E308" text="Barrio" />
+                                          <TableColumn fx:id="tb_telefono_1_estudiante" maxWidth="1.7976931348623157E308" text="Teléfono 1" />
+                                          <TableColumn fx:id="tb_telefono_2_estudiante" maxWidth="1.7976931348623157E308" text="Teléfono 2" />
+                                          <TableColumn fx:id="tb_email_estudiante" maxWidth="1.7976931348623157E308" text="Email" />
+                                          <TableColumn fx:id="tb_acudiente_1_estudiante" maxWidth="1.7976931348623157E308" text="Acudiente 1" />
+                                          <TableColumn fx:id="tb_acudiente_2_estudiante" maxWidth="1.7976931348623157E308" text="Acudiente 2" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="txt_buscar_estudiante" layoutX="39.0" layoutY="30.0" prefHeight="30.0" prefWidth="240.0" promptText="Buscar" styleClass="search" stylesheets="@../../../docente.css" AnchorPane.topAnchor="30.0">
+                                       <font>
+                                          <Font name="Telugu MN" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="46.0" layoutY="49.0" />
+                                    <Label alignment="CENTER_RIGHT" layoutX="30.0" minWidth="60.0" prefHeight="18.0" prefWidth="60.0" text="Id:" AnchorPane.bottomAnchor="224.0" AnchorPane.leftAnchor="30.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_id_estudiante" layoutX="101.0" layoutY="481.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="218.0" AnchorPane.leftAnchor="101.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="30.0" minWidth="60.0" text="Apellidos:" AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="30.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_apellidos_estudiante" layoutX="101.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="101.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="30.0" minWidth="60.0" text="Nombres:" AnchorPane.bottomAnchor="147.0" AnchorPane.leftAnchor="30.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_nombres_estudiante" layoutX="101.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="143.0" AnchorPane.leftAnchor="101.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="30.0" minWidth="60.0" text="Curso:" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="30.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="chb_curso_estudiante" layoutX="101.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="101.0" />
+                                    <Label alignment="CENTER_RIGHT" layoutX="30.0" minWidth="60.0" text="Jornada:" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="30.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="chb_jornada_estudiante" layoutX="101.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="101.0" />
+                                    <Label alignment="CENTER_RIGHT" layoutX="277.0" layoutY="486.0" minWidth="60.0" text="Sede:" AnchorPane.bottomAnchor="223.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btn_agregar_estudiante" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="673.0" mnemonicParsing="false" onAction="#addEstudiante" prefHeight="40.0" prefWidth="120.0" styleClass="agregar-btn" stylesheets="@../../../docente.css" text="AGREGAR" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" />
+                                    <Button fx:id="btn_actualizar_estudiante" alignment="CENTER" contentDisplay="CENTER" layoutX="252.0" layoutY="673.0" mnemonicParsing="false" onAction="#actualizarEstudiante" prefHeight="40.0" prefWidth="120.0" styleClass="actualizar-btn" stylesheets="@../../../docente.css" text="ACTUALIZAR" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" />
+                                    <Button fx:id="btn_eliminar_estudiante" alignment="CENTER" contentDisplay="CENTER" layoutX="410.0" layoutY="673.0" mnemonicParsing="false" onAction="#eliminarEstudiante" prefHeight="40.0" prefWidth="120.0" styleClass="eliminar-btn" stylesheets="@../../../docente.css" text="ELIMINAR" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" />
+                                    <Button fx:id="btn_limpiar_estudiante" alignment="CENTER" contentDisplay="CENTER" layoutX="568.0" layoutY="673.0" mnemonicParsing="false" onAction="#limpiarCamposEstudiante" prefHeight="40.0" prefWidth="120.0" styleClass="limpiar-btn" stylesheets="@../../../docente.css" text="LIMPIAR" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" />
+                                    <AnchorPane layoutX="710.0" layoutY="499.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="233.0" prefWidth="180.0" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="30.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="add_imagen_estudiante" fitHeight="205.0" fitWidth="180.0" layoutY="-1.0" pickOnBounds="true" />
+                                          <Button fx:id="btn_imagen_estudiante" layoutY="206.0" mnemonicParsing="false" onAction="#seleccionarImagenEstudiante" pickOnBounds="false" prefHeight="26.0" prefWidth="180.0" styleClass="import-btn" stylesheets="@../../../docente.css" text="IMPORTAR" textAlignment="CENTER">
+                                             <cursor>
+                                                <Cursor fx:constant="DEFAULT" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <ChoiceBox fx:id="chb_sede_estudiante" layoutX="345.0" layoutY="482.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="217.0" />
+                                    <Label alignment="CENTER_RIGHT" layoutX="230.0" layoutY="525.0" minWidth="60.0" text="Fecha nacimiento:" AnchorPane.bottomAnchor="184.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="230.0" layoutY="564.0" minWidth="60.0" prefHeight="18.0" prefWidth="107.0" text="Edad:" AnchorPane.bottomAnchor="145.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_edad_estudiante" layoutX="345.0" layoutY="558.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="141.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="231.0" layoutY="601.0" minWidth="60.0" prefHeight="18.0" prefWidth="107.0" text="Dirección:" AnchorPane.bottomAnchor="108.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_direccion_estudiante" layoutX="347.0" layoutY="595.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="104.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="231.0" layoutY="637.0" minWidth="60.0" prefHeight="18.0" prefWidth="107.0" text="Barrio:" AnchorPane.bottomAnchor="72.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_barrio_estudiante" layoutX="347.0" layoutY="632.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="67.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="483.0" layoutY="486.0" minWidth="60.0" prefHeight="18.0" prefWidth="73.0" text="Teléfono 1:" AnchorPane.bottomAnchor="223.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_telefono_1_estudiante" layoutX="565.0" layoutY="481.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="218.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="482.0" layoutY="524.0" minWidth="60.0" prefHeight="18.0" prefWidth="74.0" text="Teléfono 2:" AnchorPane.bottomAnchor="185.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_telefono_2_estudiante" layoutX="565.0" layoutY="519.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="180.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="505.0" layoutY="562.0" minWidth="51.0" prefHeight="18.0" prefWidth="51.0" text="Email:" AnchorPane.bottomAnchor="147.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_email_estudiante" layoutX="565.0" layoutY="557.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="142.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="477.0" layoutY="600.0" minWidth="60.0" prefHeight="18.0" prefWidth="78.0" text="Acudiente 1:" AnchorPane.bottomAnchor="109.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_acudiente_1_estudiante" layoutX="565.0" layoutY="595.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="104.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label alignment="CENTER_RIGHT" layoutX="477.0" layoutY="637.0" minWidth="60.0" prefHeight="18.0" prefWidth="78.0" text="Acudiente 2:" AnchorPane.bottomAnchor="72.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_acudiente_2_estudiante" layoutX="565.0" layoutY="632.0" prefHeight="28.0" prefWidth="120.0" AnchorPane.bottomAnchor="67.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <DatePicker fx:id="dp_fecha_nacimiento_estudiante" layoutX="345.0" layoutY="522.0" prefHeight="25.0" prefWidth="120.0" AnchorPane.bottomAnchor="180.0" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                    <top>
+                        <AnchorPane prefHeight="33.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutX="239.0" layoutY="-2.0" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="961.0" styleClass="top-form" stylesheets="@../../../docente.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="239.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="961.0" text="Sistema Tiempo Escolar Complementario" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <font>
+                                                <Font name="Telugu MN" size="14.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
